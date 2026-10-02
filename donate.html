@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="uk"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FART UA — Літній Сезон 2026</title>
+    <meta name="description" content="Сучасний український сервер Multi Theft Auto (MTA:SA) | Літній Сезон 2026. Унікальний автопром, тюнінг, фракції та особистий кабінет!">
+    <meta name="keywords" content="MTA SA, FART UA, Ukraine Roleplay, MTA Ukraine, Особистий кабінет MTA">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Rajdhani:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Summer Edition CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Cyber Canvas Particle Background -->
+    <canvas id="particle-canvas" width="1440" height="900"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo.png" alt="FART UA Logo">
+                <div class="brand-text">
+                    <span class="brand-title">FART <span style="color: var(--summer-sun);">UA</span></span>
+                    <span class="brand-subtitle"><i class="fa-solid fa-sun" style="color: var(--summer-gold);"></i> SUMMER SEASON 2026</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html" class="nav-link ">
+                            <i class="fa-solid fa-house"></i> Головна
+                        </a>
+                    </li>
+                    <li>
+                        <a href="how-to-play.html" class="nav-link ">
+                            <i class="fa-solid fa-gamepad"></i> Як почати грати
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rules.html" class="nav-link ">
+                            <i class="fa-solid fa-scroll"></i> Правила
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html" class="nav-link ">
+                            <i class="fa-solid fa-newspaper"></i> Новини
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <div class="status-badge" title="Статус сервера">
+                    <span class="pulse-dot"></span>
+                    <span>ONLINE: <strong id="online-count" style="color:#fff;">1</strong>/100</span>
+                </div>
+
+                <!-- Top Right Personal Cabinet Button with Skin Avatar -->
+                                    <a href="cabinet.html" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-user-shield"></i> Особистий кабінет
+                    </a>
+                
+                <button class="mobile-toggle" aria-label="Меню">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <img src="assets/images/hero-bg.jpg" alt="FART UA MTA Server Background" class="hero-bg reveal-fade active">
+    
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content reveal-up active">
+                <span class="summer-badge">
+                    <i class="fa-solid fa-sun" style="color: var(--summer-sun);"></i> SUMMER SEASON 2026
+                </span>
+                <h1 style="margin-top: 14px;">
+                    FART <span class="text-gradient">UA</span> <br>
+                    <span style="font-size: 0.65em; color: #fff; letter-spacing: 1px;">UKRAINE ROLEPLAY &amp; DRIFT</span>
+                </h1>
+                <p>
+                    Ласкаво просимо на FART UA! Твоє місто, твої правила. Збирай власну колекцію авто, дрифтуй на вулицях, влаштовуйся в Держструктури або збирай свій клан для вуличних розбірок.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="downloads/FART_UA_Setup_2.0.2.exe" download="" class="btn btn-primary" style="gap: 10px;">
+                        <i class="fa-solid fa-download"></i> Завантажити Лаунчер (2.0.2.exe)
+                    </a>
+                    <a href="https://discord.gg/fartua" target="_blank" class="btn btn-secondary">
+                        <i class="fa-brands fa-discord" style="color: #5865F2;"></i> Discord Спільнота
+                    </a>
+                </div>
+            </div>
+
+            <!-- Server Stats Panel -->
+            <div class="hero-stats-card reveal-zoom active">
+                <div class="stat-item glass-card">
+                    <div class="stat-val" id="online-count">0</div>
+                    <div class="stat-lbl">Гравців онлайн</div>
+                    <div style="width: 100%; background: rgba(255,255,255,0.1); height: 4px; border-radius: 2px; margin-top: 10px; overflow: hidden;">
+                        <div id="online-progress" style="width: 1%; background: linear-gradient(90deg, var(--summer-cyan), var(--summer-sun)); border-radius: 2px; transition: width 0.5s ease;"></div>
+                    </div>
+                </div>
+
+                <div class="stat-item glass-card">
+                    <div class="stat-val" id="max-count">500</div>
+                    <div class="stat-lbl">Слотів сервера</div>
+                </div>
+
+                <div class="stat-item glass-card">
+                    <div class="stat-val" id="ping-count">14 ms</div>
+                    <div class="stat-lbl">Серверний пінг</div>
+                </div>
+
+                <div class="stat-item glass-card">
+                    <div class="stat-val" style="color: var(--neon-green);">99.9%</div>
+                    <div class="stat-lbl">Стабільність</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section style="padding: 60px 0;">
+    <div class="container">
+        <div class="section-title-wrap reveal-up">
+            <span class="section-subtitle">ЩО НА ТЕБЕ ЧЕКАЄ</span>
+            <h2 class="section-title">Ігровий процес <span class="text-gradient">FART UA</span></h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="glass-card feature-card reveal-up">
+                <div class="feature-icon-box">
+                    <i class="fa-solid fa-car-burst"></i>
+                </div>
+                <h3>Кастомний Гараж &amp; Тюнінг</h3>
+                <p>BMW, Audi, ВАЗ та спорткари. Повна настройка підвіски, вихлопу, вивороту для дрифту, підсвічування та тонування під свій стиль.</p>
+            </div>
+
+            <div class="glass-card feature-card reveal-up" style="animation-delay: 0.15s;">
+                <div class="feature-icon-box" style="border-color: var(--summer-gold); color: var(--summer-gold); background: rgba(255,154,0,0.1);">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Фракції та Клани</h3>
+                <p>Лови порушників у Поліції, рятуй життя в ДСНС або захоплюй бізнеси разом зі своїм синдикатом у кримінальному світі.</p>
+            </div>
+
+            <div class="glass-card feature-card reveal-up" style="animation-delay: 0.3s;">
+                <div class="feature-icon-box" style="border-color: var(--neon-green); color: var(--neon-green); background: rgba(0,255,136,0.1);">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3>Економіка та Нерухомість</h3>
+                <p>Купуй квартири, гаражі та прибуткові бізнеси. Заробляй на далекобії, сервісах або перепродажі рідкісних авто.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Showcase -->
+<section style="padding: 40px 0 80px;">
+    <div class="container">
+        <div class="section-title-wrap reveal-up">
+            <span class="section-subtitle">СХОДКИ ТА ДРИФТ</span>
+            <h2 class="section-title">Кадри з <span class="text-gradient">Сервера</span></h2>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item reveal-zoom" data-lightbox="assets/images/feature-cars.jpg">
+                <img src="assets/images/feature-cars.jpg" alt="Тюнінг авто">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag"><i class="fa-solid fa-car"></i> Автопарк</span>
+                    <h3 class="gallery-title">Гаражні сходки та автовиставки</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal-zoom" data-lightbox="assets/images/hero-bg.jpg" style="animation-delay: 0.15s;">
+                <img src="assets/images/hero-bg.jpg" alt="Нічне місто">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag"><i class="fa-solid fa-city"></i> Атмосфера</span>
+                    <h3 class="gallery-title">Нічний дрифт на вулицях</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal-zoom" data-lightbox="assets/images/logo.png" style="animation-delay: 0.3s;">
+                <img src="assets/images/logo.png" alt="Проект FART UA">
+                <div class="gallery-overlay">
+                    <span class="gallery-tag"><i class="fa-solid fa-flag"></i> FART UA</span>
+                    <h3 class="gallery-title">Офіційна спільнота</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Play CTA Section -->
+<section style="padding: 40px 0 80px;">
+    <div class="container">
+        <div class="glass-card reveal-up" style="text-align: center; padding: 60px 30px; border-color: var(--summer-gold); background: linear-gradient(135deg, rgba(18,24,38,0.95) 0%, rgba(255,154,0,0.12) 100%);">
+            <span class="summer-badge" style="margin-bottom: 16px;">
+                <i class="fa-solid fa-fire"></i> ПРИЄДНУЙСЯ ДО НАС
+            </span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 16px; color: #fff;">Готовий до гри на FART UA?</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; color: var(--text-secondary);">
+                Завантажуй офіційний лаунчер FART UA для автоматичного встановлення модифікацій та швидкого входу на сервер!
+            </p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="downloads/FART_UA_Setup_2.0.2.exe" download="" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.1rem; gap: 10px;">
+                    <i class="fa-solid fa-download"></i> Завантажити Лаунчер FART UA
+                </a>
+                <a href="https://discord.gg/fartua" target="_blank" class="btn btn-secondary" style="padding: 16px 36px; font-size: 1.1rem;">
+                    <i class="fa-brands fa-discord" style="color: #5865F2;"></i> Discord Спільнота
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+                        <img src="assets/images/logo.png" alt="FART UA Logo" style="height: 40px; width: 40px;">
+                        <span class="brand-title" style="font-size: 1.2rem;">FART <span style="color: var(--summer-sun);">UA</span></span>
+                    </a>
+                    <p>Українська спільнота у Multi Theft Auto (MTA:SA). Дрифт, ролеплей, кастомний автопром та дружня тусовка гравців.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Навігація</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: var(--summer-cyan);"></i> Головна</a></li>
+                        <li><a href="cabinet.html"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: var(--summer-cyan);"></i> Особистий кабінет</a></li>
+                        <li><a href="how-to-play.html"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: var(--summer-cyan);"></i> Як почати грати</a></li>
+                        <li><a href="rules.html"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: var(--summer-cyan);"></i> Правила проекту</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Підключення</h4>
+                    <ul>
+                        <li><a href="mtasa://c1.ketrix.cloud:20013"><i class="fa-solid fa-bolt" style="color: var(--neon-green);"></i> Запустити MTA:SA</a></li>
+                        <li><a href="https://discord.gg/fartua" target="_blank"><i class="fa-brands fa-discord" style="color: #5865F2;"></i> Discord Сервер</a></li>
+                        <li><a href="https://t.me/fart_ua_mta" target="_blank"><i class="fa-brands fa-telegram" style="color: #0088cc;"></i> Telegram Канал</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Спільнота</h4>
+                    <div style="display: flex; gap: 12px; margin-top: 10px;">
+                        <a href="https://discord.gg/fartua" target="_blank" class="btn btn-secondary btn-icon" title="Discord">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="https://t.me/fart_ua_mta" target="_blank" class="btn btn-secondary btn-icon" title="Telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@fart_ua_mta" target="_blank" class="btn btn-secondary btn-icon" title="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://youtube.com/@fart_ua_mta" target="_blank" class="btn btn-secondary btn-icon" title="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 <strong>FART UA</strong>. <span style="color: var(--summer-gold);"><i class="fa-solid fa-sun"></i> SUMMER SEASON 2026</span>. Всі права захищено.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="gallery-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <img id="modal-img" src="" alt="FART UA Screenshot Showcase">
+        </div>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;1965c526038a44de8e15068bacb12935&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script>
+
+
+</body></html>
